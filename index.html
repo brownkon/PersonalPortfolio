@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Konner Brown | Portfolio & Projects</title>
+    <meta name="description" content="Innovation at the intersection of AI, Agriculture, and 3D Modeling. Explore the Honors Capstone, Farmer AI Assistant, and Image Classification models by Konner Brown." />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Background Ambient Glow -->
+      <div class="ambient-glow"></div>
+      
+      <nav class="glass-nav">
+        <div class="nav-content">
+          <span class="logo">KB</span>
+          <div class="nav-links">
+            <a href="#projects">Projects</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+      </nav>
+
+      <main>
+        <section id="hero" class="hero-section">
+          <div class="hero-content">
+            <h1 class="glitch-text" data-text="KONNER BROWN">KONNER BROWN</h1>
+            <p class="hero-subtitle">Engineering the future of AI & Interactive Systems</p>
+            <div class="social-links-hero">
+              <a href="https://github.com/konnerbrown" target="_blank" class="social-btn">GitHub</a>
+              <a href="https://linkedin.com/in/konnerbrown" target="_blank" class="social-btn">LinkedIn</a>
+              <a href="mailto:konner@example.com" class="social-btn">Email</a>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+          <div class="section-header">
+            <h2 class="section-title">Project Spotlight</h2>
+            <div class="title-underline"></div>
+          </div>
+
+          <div class="projects-grid">
+            <!-- Honors Capstone Project -->
+            <div class="project-card glass-card featured" id="capstone-card">
+              <div class="card-content">
+                <span class="badge">Honors Capstone</span>
+                <h3>3D Generative Vision</h3>
+                <p>Interactive tool trained to transform 2D input into structured 3D geometry. Leveraging computer vision for spatial reconstruction.</p>
+                <div class="card-footer">
+                  <button class="primary-btn demo-trigger">Open Live Lab</button>
+                  <div class="tech-stack">
+                    <span>Python</span>
+                    <span>TensorFlow</span>
+                    <span>Three.js</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Farmer App (Bessie/Maggie) -->
+            <div class="project-card glass-card">
+              <div class="card-content">
+                <span class="badge">Development</span>
+                <h3>Farmer Assistant AI</h3>
+                <p>A native-driven AI assistant for agricultural management. Features voice-to-action recording, cattle tracking, and offline processing.</p>
+                <div class="card-footer">
+                  <span class="status">In Progress</span>
+                  <div class="tech-stack">
+                    <span>React Native</span>
+                    <span>Node.js</span>
+                    <span>Supabase</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Image Classification -->
+            <div class="project-card glass-card">
+              <div class="card-content">
+                <span class="badge">Machine Learning</span>
+                <h3>Classification Model</h3>
+                <p>Deep Learning model trained on specialized datasets for high-accuracy object detection and naming conventions.</p>
+                <div class="card-footer">
+                  <a href="#" class="secondary-btn">View Metrics</a>
+                  <div class="tech-stack">
+                    <span>PyTorch</span>
+                    <span>CNNs</span>
+                    <span>OpenCV</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer id="contact">
+        <div class="footer-content">
+          <h3>Let's Connect</h3>
+          <div class="social-links">
+            <a href="https://github.com/konnerbrown" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/konnerbrown" target="_blank">LinkedIn</a>
+            <a href="mailto:konner@example.com">Email</a>
+          </div>
+          <p class="copyright">&copy; 2024 Konner Brown. Built with high-fidelity performance.</p>
+        </div>
+      </footer>
+    </div>
+
+    <!-- 3D Lab GUI Overlay -->
+    <div id="gui-overlay" class="gui-overlay modal-hidden">
+      <div class="gui-container glass-card">
+        <button class="close-gui">&times;</button>
+        <div class="gui-layout">
+          <div class="gui-controls">
+            <h2>3D Model Generator</h2>
+            <p>Upload a reference image or use a sample to begin reconstructed synthesis.</p>
+            <div class="upload-area" id="drop-zone">
+              <input type="file" id="file-input" hidden accept="image/*" />
+              <label for="file-input" class="upload-label">
+                <span class="upload-icon">↑</span>
+                <span>Import Reference Image</span>
+              </label>
+              <div id="image-preview" class="image-preview hidden"></div>
+            </div>
+            <button class="sample-btn" id="load-sample">Load Honors Project Sample</button>
+            <div class="inference-stats hidden" id="stats">
+              <!-- Stats will be dynamically updated if needed -->
+            </div>
+            
+            <div class="gui-extra-controls hidden" id="extra-controls">
+              <h3>Model Controls</h3>
+              <div class="control-grid">
+                <button id="flip-h" class="control-btn">Flip Horizontal</button>
+                <button id="flip-v" class="control-btn">Flip Vertical</button>
+                <button id="reset-view" class="control-btn reset">Reset View</button>
+              </div>
+            </div>
+
+            <button class="generate-btn" id="generate-btn" disabled>Generate 3D Geometry</button>
+          </div>
+          <div class="gui-viewer" id="three-canvas-container">
+            <!-- Three.js Canvas will be injected here -->
+            <div class="viewer-placeholder">
+              <p>Geometry Viewport</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

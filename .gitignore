@@ -1,0 +1,38 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Large project files
+capstone/
+# Avoid ignoring everything in capstone_project, just the large artifacts
+capstone_project/Depth-Anything-V2/checkpoints/
+capstone_project/Depth-Anything-V2/venv/
+capstone_project/MuseumPics/
+capstone_project/3dOutputs/
+**/node_modules/
+**/venv/
+**/.DS_Store
+*.pth
+*.stl
+
